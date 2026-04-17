@@ -1,0 +1,680 @@
+<!DOCTYPE html><html class="light" lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>LUBIT - IES CINOC | Excelencia Académica</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary": "#ffffff",
+              "surface-container-highest": "#e1e3e4",
+              "tertiary": "#000b1e",
+              "on-error-container": "#93000a",
+              "on-tertiary-fixed-variant": "#004786",
+              "secondary-container": "#fe6500",
+              "surface-container-lowest": "#ffffff",
+              "on-primary-container": "#708ab5",
+              "inverse-surface": "#2e3132",
+              "error-container": "#ffdad6",
+              "outline": "#74777f",
+              "error": "#ba1a1a",
+              "surface-container": "#edeeef",
+              "surface-container-high": "#e7e8e9",
+              "on-background": "#191c1d",
+              "on-error": "#ffffff",
+              "surface-dim": "#d9dadb",
+              "secondary-fixed-dim": "#ffb596",
+              "on-secondary": "#ffffff",
+              "on-tertiary-fixed": "#001c3a",
+              "secondary": "#a33e00",
+              "on-secondary-container": "#541d00",
+              "tertiary-fixed": "#d4e3ff",
+              "inverse-primary": "#aec7f6",
+              "surface-bright": "#f8f9fa",
+              "on-primary-fixed": "#001b3d",
+              "primary-fixed": "#d6e3ff",
+              "tertiary-fixed-dim": "#a6c8ff",
+              "surface-container-low": "#f3f4f5",
+              "primary-container": "#002147",
+              "background": "#f8f9fa",
+              "on-surface": "#191c1d",
+              "on-surface-variant": "#44474e",
+              "on-tertiary-container": "#588bd0",
+              "primary-fixed-dim": "#aec7f6",
+              "primary": "#000a1e",
+              "secondary-fixed": "#ffdbcd",
+              "on-secondary-fixed": "#360f00",
+              "on-primary-fixed-variant": "#2d476f",
+              "inverse-on-surface": "#f0f1f2",
+              "on-primary": "#ffffff",
+              "on-secondary-fixed-variant": "#7c2e00",
+              "surface-tint": "#465f88",
+              "outline-variant": "#c4c6cf",
+              "surface-variant": "#e1e3e4",
+              "tertiary-container": "#002245",
+              "surface": "#f8f9fa"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body { font-family: 'Inter', sans-serif; }
+      h1, h2, h3, h4 { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-secondary-container/30">
+<!-- TopNavBar (Shared Component) -->
+<nav class="fixed top-0 w-full z-50 bg-white shadow-[0_4px_30px_rgba(0,33,71,0.08)]">
+  <!-- Top Blue Bar -->
+  <div class="bg-[#295296] h-10 w-full flex justify-end items-center px-6 md:px-12">
+    <div class="flex items-center gap-3">
+      <!-- Social Icons -->
+      <a href="https://www.facebook.com/ies.cinoc/" class="w-6 h-6 rounded-full bg-white flex items-center justify-center hover:opacity-80 transition-opacity">
+        <svg fill="#295296" viewBox="0 0 24 24" class="w-3.5 h-3.5"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path></svg>
+      </a>
+      <a href="https://twitter.com/IES_CINOC" class="w-6 h-6 rounded-full bg-white flex items-center justify-center hover:opacity-80 transition-opacity">
+        <svg fill="#295296" viewBox="0 0 24 24" class="w-3.5 h-3.5"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg>
+      </a>
+      <a href="https://www.instagram.com/ies_cinoc/" class="w-6 h-6 rounded-full bg-white flex items-center justify-center hover:opacity-80 transition-opacity">
+        <svg fill="#295296" viewBox="0 0 24 24" class="w-3.5 h-3.5"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path></svg>
+      </a>
+      <a href="https://www.linkedin.com/company/ies-cinoc" class="w-6 h-6 rounded-full bg-white flex items-center justify-center hover:opacity-80 transition-opacity">
+        <svg fill="#295296" viewBox="0 0 24 24" class="w-3.5 h-3.5"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+      </a>
+      <a href="https://www.youtube.com/c/IESCINOC" class="w-6 h-6 rounded-full bg-white flex items-center justify-center hover:opacity-80 transition-opacity">
+        <svg fill="#295296" viewBox="0 0 24 24" class="w-3.5 h-3.5"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- Main Navbar -->
+  <div class="bg-white w-full border-b-[6px] border-[#002147]">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12 h-[88px] flex justify-between items-center">
+      <!-- Logo -->
+      <a href="https://iescinoc.edu.co/" class="flex-shrink-0">
+        <!-- Reconstructing Logo from screenshot closely -->
+        <img src="https://iescinoc.edu.co/wp-content/uploads/cropped-logo_CINOC-1.png" alt="CINOC EDUCACIÓN SUPERIOR" class="h-12 md:h-14 object-contain" onerror="this.outerHTML='<div class=\'flex items-center gap-2\'><span class=\'text-[#fe6500] font-black text-2xl md:text-3xl font-[\'Manrope\'] leading-none\'>CINOC<br><span class=\'text-[8px] md:text-[9px] tracking-widest text-[#fe6500] uppercase block\'>Educación Superior</span></span></div>'">
+      </a>
+      
+      <!-- Nav Links -->
+      <div class="hidden lg:flex items-center gap-[1.125rem] xl:gap-8 h-full pt-1">
+        <a href="#" class="text-[#002147] font-extrabold text-[12px] tracking-wide hover:text-[#fe6500] uppercase transition-colors">Usuarios</a>
+        <a href="#" class="text-[#002147] font-extrabold text-[12px] tracking-wide hover:text-[#fe6500] uppercase transition-colors">Institución</a>
+        <a href="#" class="text-[#002147] font-extrabold text-[12px] tracking-wide hover:text-[#fe6500] uppercase transition-colors">Programas</a>
+        <!-- Active Link 'ÁREAS' -->
+        <a href="#" class="text-[#002147] font-extrabold text-[12px] tracking-wide uppercase relative flex flex-col justify-center items-center h-full group">
+          Áreas
+          <span class="absolute bottom-[28px] w-8 h-[2px] bg-[#fe6500]"></span>
+        </a>
+        <a href="#" class="text-[#002147] font-extrabold text-[12px] tracking-wide hover:text-[#fe6500] uppercase transition-colors">Transparencia</a>
+        <a href="#" class="text-[#002147] font-extrabold text-[12px] tracking-wide hover:text-[#fe6500] uppercase transition-colors">Participa</a>
+        <a href="#" class="text-[#002147] font-extrabold text-[12px] tracking-wide hover:text-[#fe6500] uppercase transition-colors">Atención</a>
+        
+        <div class="h-8 w-px bg-slate-300 mx-2"></div>
+        
+        <!-- Search Icon -->
+        <button class="w-[42px] h-[42px] rounded-full bg-[#f1f1f1] flex items-center justify-center hover:bg-gray-200 transition-colors">
+          <span class="material-symbols-outlined text-[#002147] text-[20px] ml-0.5">search</span>
+        </button>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button class="lg:hidden text-[#002147] p-2 hover:bg-slate-100 rounded-lg">
+        <span class="material-symbols-outlined text-3xl">menu</span>
+      </button>
+    </div>
+  </div>
+</nav>
+<!-- Hero Section: Virtual Tour -->
+<section class="relative w-full h-[921px] flex items-center pt-32 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Recorrido 360" class="w-full h-full object-cover" data-alt="Stunning 360-degree panoramic view of the Laboratorio Unificado de B-learning, Idiomas y Tecnología (LUBIT), showing a modern high-tech academic environment with integrated digital learning tools and professional branding." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAC3FetcKUSoSjzPjVh8lAvjcqCHa0iMncVEokvSsjcB31ICwGYqiOB6hzPfyflAkG7-lsmuRGqkpq-oZdp8ABdz8XcllbFFgbBj6LO4LWGiZ-oRhL_-cL2LGAI1JrhLw-3HTLSXGYfPPyJuRs6DtqdFTHVrr7DWaELDLPa4D4fbq3SudWnS3iS-Q4AJEiwNs5gpH20vREh93bHCH93-8i7Lli5i3mzCd0WOGi4X_gNAGAV5AlTkhpthfIWCMyASuF5pCzJUtIW8ujb" style="">
+<div class="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/40 to-transparent"></div>
+<div class="absolute top-1/2 right-24 -translate-y-1/2 hidden lg:flex flex-col items-end pointer-events-none select-none z-10">
+<div class="flex flex-col items-end border-r-4 border-[#fe6500] pr-8 py-6 bg-primary/20 backdrop-blur-md rounded-l-xl">
+<span class="text-[#fe6500] font-black tracking-[0.4em] text-xs mb-3 uppercase" style="">Infraestructura Digital</span>
+<h2 class="text-white font-['Manrope'] font-extrabold text-2xl text-right max-w-sm leading-tight drop-shadow-2xl" style="">
+            Laboratorio Unificado de B-learning, Idiomas y Tecnología <span class="text-[#fe6500]" style="">(LUBIT)</span>
+</h2>
+</div>
+</div></div>
+<div class="relative z-10 px-12 max-w-7xl mx-auto w-full">
+<div class="max-w-2xl">
+<span class="inline-block px-4 py-1.5 bg-secondary-container/20 text-secondary-container font-bold text-sm tracking-widest uppercase mb-6 rounded-full" style="">Experiencia Inmersiva</span>
+<h1 class="text-6xl md:text-7xl font-extrabold text-white leading-tight mb-8" style="">Explora nuestras instalaciones en 360°</h1>
+<p class="text-xl text-slate-200 mb-10 leading-relaxed font-body" style="">Sumérgete en un entorno digital diseñado para que conozcas cada rincón de nuestra institución sin moverte de casa.</p>
+<a href="recorridos.html" class="group inline-flex items-center gap-4 bg-secondary-container text-white px-10 py-5 rounded-xl text-lg font-bold shadow-2xl shadow-secondary-container/30 transition-all hover:-translate-y-1 hover:shadow-secondary-container/50">
+                    Iniciar Recorrido
+                    <span class="material-symbols-outlined transition-transform group-hover:translate-x-2" style="">arrow_forward</span>
+</a>>
+</div>
+</div>
+</section>
+<!-- About Section: ¿Qué es LUBIT? -->
+<section class="py-32 bg-surface">
+<div class="max-w-7xl mx-auto px-12 grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+<div class="relative group">
+<div class="absolute -inset-4 bg-primary-container/5 rounded-2xl transform rotate-2"></div>
+<div class="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-2xl">
+<img alt="Educación LUBIT" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&q=80&w=1200" style="">
+</div>
+<div class="absolute bottom-12 -right-12 bg-white p-8 rounded-2xl shadow-2xl max-w-xs hidden md:block">
+<span class="text-secondary-container font-bold text-4xl block mb-2" style="">Para todas las edades</span>
+<p class="text-on-surface-variant text-sm font-medium" style="">Liderando la formación tecnológica y profesional en la región.</p>
+</div>
+</div>
+<div class="space-y-8">
+<div class="space-y-4">
+<h2 class="text-primary-container text-5xl font-extrabold tracking-tight" style="">¿Qué es LUBIT?</h2>
+<div class="w-20 h-1.5 bg-secondary-container"></div>
+</div>
+<p class="text-xl text-on-surface-variant leading-relaxed font-body" style="">
+                    L<span style="color: rgb(51, 51, 51); font-family: Montserrat; font-size: 16px; background-color: rgb(255, 255, 255);">El&nbsp;<b style="font-weight: bold; margin-bottom: 0px;">Laboratorio Unificado de B-learning, Idiomas y Tecnología</b>, es un espacio moderno desarrollo de habilidades en B-Learning e idiomas, así́ como investigaciones en el campo de las neurociencias.</span><span style="color: rgb(51, 51, 51); font-family: Montserrat; font-size: 16px; background-color: rgb(255, 255, 255);"><br style="margin-bottom: 0px;"></span><span style="margin-bottom: 0px; color: rgb(51, 51, 51); font-family: Montserrat; font-size: 16px; background-color: rgb(255, 255, 255);">Cuenta con elementos tecnológicos de alta tecnología, que son puestos al servicio de la enseñanza- aprendizaje, y que serán implementados para el desarrollo de la región por medio de: cursos cortos, seminarios, investigaciones y diplomados.&nbsp;</span></p>
+<div class="space-y-6">
+<div class="flex gap-6 p-6 bg-surface-container-low rounded-xl">
+<div class="flex-shrink-0 w-12 h-12 bg-primary-container flex items-center justify-center rounded-lg">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: &quot;FILL&quot; 1;">school</span>
+</div>
+<div>
+<h4 class="text-lg font-bold text-primary-container mb-1" style="">Excelencia Académica</h4>
+<p class="text-on-surface-variant" style="">Currículos actualizados con las últimas tendencias globales.</p>
+</div>
+</div>
+<div class="flex gap-6 p-6 bg-surface-container-low rounded-xl">
+<div class="flex-shrink-0 w-12 h-12 bg-secondary-container flex items-center justify-center rounded-lg">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: &quot;FILL&quot; 1;">groups</span>
+</div>
+<div>
+<h4 class="text-lg font-bold text-primary-container mb-1" style="">Comunidad Activa</h4>
+<p class="text-on-surface-variant" style="">Conectamos talentos con las mejores oportunidades del mercado.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Museo Interactivo Section -->
+<section class="py-24 bg-[#1b365d] text-white relative overflow-hidden">
+<!-- Decorative background effect -->
+<div class="absolute -right-64 top-0 w-96 h-96 bg-secondary-container/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute -left-64 bottom-0 w-96 h-96 bg-primary-container/40 rounded-full blur-3xl pointer-events-none"></div>
+<div class="max-w-7xl mx-auto px-12 relative z-10">
+<div class="flex flex-col md:flex-row items-center gap-16">
+<div class="w-full md:w-1/2">
+<span class="inline-flex items-center gap-2 px-4 py-1.5 bg-secondary-container/20 text-secondary-container font-bold text-sm tracking-widest uppercase mb-6 rounded-full border border-secondary-container/30"><span class="material-symbols-outlined text-[16px]">account_balance</span> Proyecto Institucional</span>
+<h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6 font-['Manrope'] leading-tight">Museo Interactivo de Conflictividad</h2>
+<p class="text-slate-300 text-[17px] leading-relaxed font-body mb-6">Un espacio de reflexión, memoria y comprensión de la historia a través de piezas tecnológicas destinadas a educar, sanar y preservar la verdad sobre la conflictividad en nuestro territorio.</p>
+<div class="grid grid-cols-2 gap-3 mb-8">
+  <div class="flex items-center gap-2 text-sm text-slate-200"><span class="material-symbols-outlined text-[#fe6500] text-[18px]">view_in_ar</span> Realidad Aumentada</div>
+  <div class="flex items-center gap-2 text-sm text-slate-200"><span class="material-symbols-outlined text-[#fe6500] text-[18px]">360</span> Videos 360°</div>
+  <div class="flex items-center gap-2 text-sm text-slate-200"><span class="material-symbols-outlined text-[#fe6500] text-[18px]">sports_esports</span> Juegos Interactivos</div>
+  <div class="flex items-center gap-2 text-sm text-slate-200"><span class="material-symbols-outlined text-[#fe6500] text-[18px]">photo_library</span> Archivo Audiovisual</div>
+</div>
+<div class="flex gap-4">
+<a href="museo.html" class="bg-[#fe6500] hover:bg-[#a33e00] text-white font-bold py-3 px-8 rounded-lg transition-colors flex items-center gap-3 shadow-lg shadow-[#fe6500]/20">
+Ingresar al Museo <span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</a>
+</div>
+</div>
+<div class="w-full md:w-1/2 grid grid-cols-2 gap-5 relative">
+<!-- Decorative element -->
+<div class="absolute -inset-4 bg-white/5 rounded-2xl border border-white/10 -rotate-3 z-0"></div>
+<div class="rounded-xl overflow-hidden shadow-2xl h-80 transform translate-y-6 relative z-10">
+<img src="https://images.unsplash.com/photo-1566835252877-ab0125816919?auto=format&fit=crop&q=80&w=800" alt="Archivo Histórico" class="w-full h-full object-cover grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700 hover:scale-105 cursor-pointer">
+</div>
+<div class="rounded-xl overflow-hidden shadow-2xl h-80 relative z-10">
+<img src="https://images.unsplash.com/photo-1542616239-01e4addfc6e2?auto=format&fit=crop&q=80&w=800" alt="Exposición Museo" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105 cursor-pointer">
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Courses Section -->
+<section class="py-32 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-12">
+<div class="text-center max-w-3xl mx-auto mb-20">
+<h2 class="text-4xl font-extrabold text-primary-container mb-6" style=""><h2 align="center" style="font-family: Montserrat; font-weight: 700; line-height: 32px; color: rgb(51, 51, 51); margin-top: 20px; font-size: 32px; background-color: rgb(255, 255, 255);">NUESTROS CURSOS Y DIPLOMADOS</h2></h2>
+<p class="text-on-surface-variant text-lg font-body leading-relaxed" style="">Formación intensiva diseñada para transformar tu perfil profesional con habilidades de alta demanda.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- Course Card 1 -->
+<div class="group bg-white rounded-2xl overflow-hidden shadow-[0_20px_50px_-20px_rgba(0,33,71,0.1)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_40px_80px_-30px_rgba(0,33,71,0.2)]">
+<div class="h-64 overflow-hidden">
+<img alt="Inglés Profesional" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Diverse group of young professionals collaborating in a brightly lit modern office with city view in the background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAE8QfqSK4DRzEHmY8QMpzflPXHTaXrwobs_5t6WyvINcEa042VRBHMjIZmjxNbQMXyskZciZofGj554WIwykqKJtVz55p7borSWMVVs4j3yVMPVQJYieSDjBEaM0INLvbnoMX57Wx0Mv1PYh3eZw3MrGEamTdZ9w2uolwCGwCSjG6WaBuKdFoZKXqU4BNYhPBRyiRG4O-GIlPl8GobNRPjtoOcdcPb4-wgWqYKHtWEETR9r4tmjoa6j-EmjPgrChyaoLCAXBWwUIqT" style="">
+</div>
+<div class="p-10">
+<div class="flex justify-between items-start mb-6">
+<span class="px-4 py-1 bg-surface-container-high text-primary-container text-xs font-bold rounded-full uppercase tracking-widest" style="">Idiomas</span>
+<span class="text-secondary-container font-black text-2xl" style="">B2+</span>
+</div>
+<h3 class="text-2xl font-bold text-primary-container mb-4" style="">English for Global Tech</h3>
+<p class="text-on-surface-variant mb-8 leading-relaxed font-body" style="">Domina el lenguaje técnico y las habilidades de comunicación necesarias para equipos internacionales de desarrollo.</p>
+<a class="inline-flex items-center text-[#fe6500] font-bold gap-2 group-hover:gap-4 transition-all" href="#" style="">
+                            Ver plan de estudios
+                            <span class="material-symbols-outlined text-sm" style="">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Course Card 2 -->
+<div class="group bg-white rounded-2xl overflow-hidden shadow-[0_20px_50px_-20px_rgba(0,33,71,0.1)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_40px_80px_-30px_rgba(0,33,71,0.2)]">
+<div class="h-64 overflow-hidden relative">
+<img alt="Tecnología" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Digital developer workspace with dual monitors showing complex code and data visualizations in a cinematic low-light environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6r3a_7ZFBV3g3uENsaM4ZlrJI8befKRXxbApvOlIGq0UyIEOi8IBsVXgX5gUPtyq8TeuhNur9q9ZwkTUW-M7NWbdut6AmQOeRkwsm-OLuxVNg86O23205UabMBXqGfeT2nlgNYzHTFz7-5DeglyfbXVa9zwj5IdRsDXRwsUAQZtorTfn8Il1SqBqJ0gDdpEcvpHyvOHkKAoBmvcXCIVYdVxrotC4Z9PbOD1VpVWq_dO1MdlnU4sfLzomU--COZ4g5pdiarN7aiuLZ" style="">
+<div class="absolute inset-0 bg-primary-container/20 group-hover:bg-primary-container/0 transition-colors"></div>
+</div>
+<div class="p-10">
+<div class="flex justify-between items-start mb-6">
+<span class="px-4 py-1 bg-surface-container-high text-primary-container text-xs font-bold rounded-full uppercase tracking-widest" style="">Desarrollo</span>
+<span class="text-secondary-container font-black text-2xl" style="">TOP</span>
+</div>
+<h3 class="text-2xl font-bold text-primary-container mb-4" style="">Arquitectura de Software</h3>
+<p class="text-on-surface-variant mb-8 leading-relaxed font-body" style="">Especialízate en el diseño de sistemas escalables utilizando microservicios y despliegues en la nube.</p>
+<a class="inline-flex items-center text-[#fe6500] font-bold gap-2 group-hover:gap-4 transition-all" href="#" style="">
+                            Ver plan de estudios
+                            <span class="material-symbols-outlined text-sm" style="">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<div class="mt-28">
+<div class="flex flex-col items-center justify-center mb-16">
+<div class="inline-flex items-center justify-center w-full gap-6">
+<div class="h-px w-full max-w-[80px] sm:max-w-[120px] bg-secondary-container/30"></div>
+<span class="text-sm font-bold text-secondary-container tracking-widest uppercase mb-1">Especializaciones</span>
+<div class="h-px w-full max-w-[80px] sm:max-w-[120px] bg-secondary-container/30"></div>
+</div>
+<h3 class="text-3xl font-extrabold text-primary-container font-['Manrope'] text-center mt-3">Explora Otras Ofertas</h3>
+</div>
+
+<div class="flex flex-wrap justify-center gap-8">
+<!-- Card 1 -->
+<div class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.4rem)] group bg-white rounded-2xl overflow-hidden shadow-lg shadow-[#002147]/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#002147]/10 flex flex-col border border-surface-container-high">
+<div class="h-52 overflow-hidden relative">
+<img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800" alt="Curso de Electrónica" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+<div class="absolute inset-0 bg-primary-container/10 group-hover:bg-transparent transition-colors duration-500"></div>
+<div class="absolute top-4 left-4">
+<span class="px-3 py-1 bg-white/95 backdrop-blur shadow-sm text-primary-container text-[11px] font-extrabold rounded-full uppercase tracking-wider">Hardware</span>
+</div>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<h4 class="text-xl font-bold text-primary-container mb-3 leading-tight group-hover:text-secondary-container transition-colors">Curso de Electrónica</h4>
+<p class="text-on-surface-variant text-[15px] flex-grow mb-8 font-body leading-relaxed">Aprende los fundamentos de la electrónica, montaje de circuitos y microcontroladores desde cero para crear tus propios dispositivos interactivos.</p>
+<div class="mt-auto border-t border-surface-container-high pt-5 flex justify-between items-center">
+<span class="text-sm font-semibold text-outline">Nivel Iniciación</span>
+<a href="#" class="inline-flex items-center text-primary-container font-bold text-sm gap-2 hover:text-secondary-container transition-colors">
+                            Ver detalles
+                            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+
+<!-- Card 2 -->
+<div class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.4rem)] group bg-white rounded-2xl overflow-hidden shadow-lg shadow-[#002147]/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#002147]/10 flex flex-col border border-surface-container-high">
+<div class="h-52 overflow-hidden relative">
+<img src="https://images.unsplash.com/photo-1544715568-1af98285513d?auto=format&fit=crop&q=80&w=800" alt="Robótica para Niños" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+<div class="absolute inset-0 bg-primary-container/10 group-hover:bg-transparent transition-colors duration-500"></div>
+<div class="absolute top-4 left-4">
+<span class="px-3 py-1 bg-white/95 backdrop-blur shadow-sm text-primary-container text-[11px] font-extrabold rounded-full uppercase tracking-wider">Infantil</span>
+</div>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<h4 class="text-xl font-bold text-primary-container mb-3 leading-tight group-hover:text-secondary-container transition-colors">Robótica para Niños</h4>
+<p class="text-on-surface-variant text-[15px] flex-grow mb-8 font-body leading-relaxed">Despierta la creatividad de los más pequeños mientras construyen y programan colaborativamente sus primeros robots de forma divertida.</p>
+<div class="mt-auto border-t border-surface-container-high pt-5 flex justify-between items-center">
+<span class="text-sm font-semibold text-outline">Nivel Básico</span>
+<a href="#" class="inline-flex items-center text-primary-container font-bold text-sm gap-2 hover:text-secondary-container transition-colors">
+                            Ver detalles
+                            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+
+<!-- Card 3 -->
+<div class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.4rem)] group bg-white rounded-2xl overflow-hidden shadow-lg shadow-[#002147]/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#002147]/10 flex flex-col border border-surface-container-high">
+<div class="h-52 overflow-hidden relative">
+<img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=800" alt="Inteligencia Artificial para Todos" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+<div class="absolute inset-0 bg-primary-container/10 group-hover:bg-transparent transition-colors duration-500"></div>
+<div class="absolute top-4 left-4">
+<span class="px-3 py-1 bg-white/95 backdrop-blur shadow-sm text-primary-container text-[11px] font-extrabold rounded-full uppercase tracking-wider">Soft Skills</span>
+</div>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<h4 class="text-xl font-bold text-primary-container mb-3 leading-tight group-hover:text-secondary-container transition-colors">IA para Todos</h4>
+<p class="text-on-surface-variant text-[15px] flex-grow mb-8 font-body leading-relaxed">Comprende qué es la Inteligencia Artificial, cómo funciona y cómo aplicarla en tu día a día sin requerir conocimientos técnicos previos.</p>
+<div class="mt-auto border-t border-surface-container-high pt-5 flex justify-between items-center">
+<span class="text-sm font-semibold text-outline">Nivel Fundamental</span>
+<a href="#" class="inline-flex items-center text-primary-container font-bold text-sm gap-2 hover:text-secondary-container transition-colors">
+                            Ver detalles
+                            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+
+<!-- Card 4 -->
+<div class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.4rem)] group bg-white rounded-2xl overflow-hidden shadow-lg shadow-[#002147]/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#002147]/10 flex flex-col border border-surface-container-high">
+<div class="h-52 overflow-hidden relative">
+<img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800" alt="Inteligencia Artificial Avanzada" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+<div class="absolute inset-0 bg-primary-container/10 group-hover:bg-transparent transition-colors duration-500"></div>
+<div class="absolute top-4 left-4">
+<span class="px-3 py-1 bg-white/95 backdrop-blur shadow-sm text-primary-container text-[11px] font-extrabold rounded-full uppercase tracking-wider">Desarrollo IA</span>
+</div>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<h4 class="text-xl font-bold text-primary-container mb-3 leading-tight group-hover:text-secondary-container transition-colors">IA Avanzada</h4>
+<p class="text-on-surface-variant text-[15px] flex-grow mb-8 font-body leading-relaxed">Sumérgete en el aprendizaje profundo (deep learning), redes neuronales y creación de modelos predictivos de alto rendimiento.</p>
+<div class="mt-auto border-t border-surface-container-high pt-5 flex justify-between items-center">
+<span class="text-sm font-semibold text-outline">Nivel Avanzado</span>
+<a href="#" class="inline-flex items-center text-primary-container font-bold text-sm gap-2 hover:text-secondary-container transition-colors">
+                            Ver detalles
+                            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+
+<!-- Card 5 -->
+<div class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.4rem)] group bg-white rounded-2xl overflow-hidden shadow-lg shadow-[#002147]/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#002147]/10 flex flex-col border border-surface-container-high">
+<div class="h-52 overflow-hidden relative">
+<img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80&w=800" alt="Domotización de Espacios" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+<div class="absolute inset-0 bg-primary-container/10 group-hover:bg-transparent transition-colors duration-500"></div>
+<div class="absolute top-4 left-4">
+<span class="px-3 py-1 bg-white/95 backdrop-blur shadow-sm text-primary-container text-[11px] font-extrabold rounded-full uppercase tracking-wider">IoT</span>
+</div>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<h4 class="text-xl font-bold text-primary-container mb-3 leading-tight group-hover:text-secondary-container transition-colors">Domotización de Espacios</h4>
+<p class="text-on-surface-variant text-[15px] flex-grow mb-8 font-body leading-relaxed">Convierte cualquier hogar u oficina en un espacio inteligente interconectado controlable desde diferentes dispositivos de forma automatizada.</p>
+<div class="mt-auto border-t border-surface-container-high pt-5 flex justify-between items-center">
+<span class="text-sm font-semibold text-outline">Nivel Intermedio</span>
+<a href="#" class="inline-flex items-center text-primary-container font-bold text-sm gap-2 hover:text-secondary-container transition-colors">
+                            Ver detalles
+                            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</section>
+<!-- For Whom Section -->
+<section class="py-24 bg-[#001c3a] text-white">
+<div class="max-w-7xl mx-auto px-12">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div>
+<h2 class="text-4xl md:text-5xl font-extrabold text-white mb-10 font-['Manrope']" style="">¿PARA QUIÉN?</h2>
+<ul class="space-y-6">
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary-container text-3xl shrink-0">child_care</span>
+<div>
+<strong class="text-xl block mb-1">Para Niños</strong>
+<p class="text-slate-300 font-body leading-relaxed text-sm">El LUBIT será una de las primeras experiencias que tendrán los niños de aprender inglés con realidad virtual, podrán conocer de esta forma el mundo, nuevas culturas y lugares con el acompañamiento de un docente capacitado.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary-container text-3xl shrink-0">school</span>
+<div>
+<strong class="text-xl block mb-1">Jóvenes</strong>
+<p class="text-slate-300 font-body leading-relaxed text-sm">Será un espacio que los introducirá en el aprendizaje por medio de nuevas tecnologías, interactuando en espacios virtuales y potenciando una segunda lengua para la vida universitaria y laboral.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary-container text-3xl shrink-0">work</span>
+<div>
+<strong class="text-xl block mb-1">Para los Docentes y/o Funcionarios</strong>
+<p class="text-slate-300 font-body leading-relaxed text-sm">Un lugar para poder cumplir el sueño de hablar otro idioma de forma vivencial y desarrollar habilidades para transmitir el conocimiento de forma clara y amena.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary-container text-3xl shrink-0">business</span>
+<div>
+<strong class="text-xl block mb-1">Para las Organizaciones Públicas y/o Privadas</strong>
+<p class="text-slate-300 font-body leading-relaxed text-sm">Espacio para capacitar personal e inscribir a trabajadores a aprender inglés de forma lúdica con tecnologías de vanguardia.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary-container text-3xl shrink-0">biotech</span>
+<div>
+<strong class="text-xl block mb-1">Para los Investigadores</strong>
+<p class="text-slate-300 font-body leading-relaxed text-sm">Un escenario real para realizar investigaciones de calidad en relación a educación, psicología, neurociencias, ciencias sociales y mercadeo.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="relative group">
+<div class="absolute -inset-4 bg-secondary-container/20 rounded-2xl transform -rotate-2"></div>
+<div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10">
+<img src="https://iescinoc.edu.co/wp-content/uploads/LUBIT-1.jpg" alt="LUBIT Realidad Virtual" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- What we offer Section -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-12">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+<div class="rounded-2xl overflow-hidden shadow-2xl aspect-video relative bg-black">
+<iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/HBtYUK6X5Z4" title="LUBIT Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<div>
+<h2 class="text-4xl md:text-5xl font-extrabold text-primary-container mb-10 font-['Manrope']">¿QUÉ OFRECE?</h2>
+<div class="space-y-4">
+<!-- Accordion 1 -->
+<details class="group bg-white rounded-xl shadow-sm border border-surface-container-high overflow-hidden" open>
+<summary class="flex items-center justify-between p-6 cursor-pointer bg-primary-container text-white font-bold text-[15px] select-none">
+    Recursos en bilingüismo como diplomados y cursos
+    <span class="material-symbols-outlined transform group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="p-6 bg-white text-on-surface-variant text-sm font-body leading-relaxed border-t border-surface-container-high">
+    <ul class="list-disc pl-5 space-y-2">
+        <li>Certificación de los niveles según el marco común Europeo.</li>
+        <li><strong>Rosetta Stone:</strong> Plataforma líder mundial en aprendizaje de idiomas en corporaciones e instituciones educativas.</li>
+        <li><strong>Textos Open Mind:</strong> Libros para dominar vocabulario y gramática.</li>
+        <li>Salón invertido e Inglés con enfoque colaborativo.</li>
+    </ul>
+</div>
+</details>
+<!-- Accordion 2 -->
+<details class="group bg-white rounded-xl shadow-sm border border-surface-container-high overflow-hidden">
+<summary class="flex items-center justify-between p-6 cursor-pointer bg-primary-container text-white font-bold text-[15px] select-none">
+    Recursos tecnológicos y metodología STEAM
+    <span class="material-symbols-outlined transform group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="p-6 bg-white text-on-surface-variant text-sm font-body leading-relaxed border-t border-surface-container-high">
+    <ul class="list-disc pl-5 space-y-2">
+        <li><strong>Gafas VR:</strong> Lentes que amplían el ángulo de visión creando una sensación inmersiva en 3D para escenarios hiperrealistas.</li>
+        <li><strong>RobotLab experience 2.0:</strong> Software enriquecido con contenidos multimedia para el uso con tecnología VR.</li>
+    </ul>
+</div>
+</details>
+<!-- Accordion 3 -->
+<details class="group bg-white rounded-xl shadow-sm border border-surface-container-high overflow-hidden">
+<summary class="flex items-center justify-between p-6 cursor-pointer bg-primary-container text-white font-bold text-[15px] select-none">
+    Recursos en neurociencia
+    <span class="material-symbols-outlined transform group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="p-6 bg-white text-on-surface-variant text-sm font-body leading-relaxed border-t border-surface-container-high">
+    <ul class="list-disc pl-5 space-y-2">
+        <li><strong>Sistema de seguimiento ocular:</strong> Rastreo y mapeo de los movimientos visuales ante interfaces y portales, evaluando áreas de atención primarias.</li>
+        <li>Análisis de expresiones y microexpresiones faciales en tiempo real.</li>
+        <li>Medición de respuestas galvánicas de la piel para correlaciones conductuales.</li>
+    </ul>
+</div>
+</details>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- News Section -->
+<section class="py-24 bg-surface">
+<div class="max-w-7xl mx-auto px-12">
+<div class="mb-16 text-center">
+<h2 class="text-4xl font-extrabold text-primary-container mb-4 font-['Manrope']">NOTICIAS</h2>
+<div class="h-1 w-20 bg-secondary-container mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- News 1 -->
+<article class="bg-surface-container-lowest overflow-hidden border border-surface-container-high rounded-xl flex flex-col hover:shadow-xl shadow-sm transition-shadow">
+<div class="aspect-[4/3] relative">
+<img src="https://iescinoc.edu.co/wp-content/uploads/WhatsApp-Image-2025-10-30-at-11.23.33-AM-1024x768.webp" class="w-full h-full object-cover">
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="font-bold text-primary-container mb-3 text-[15px] leading-snug">Ejercicios asistidos con animales fortalecen la inteligencia emocional de estudiantes</h3>
+<p class="text-on-surface-variant text-sm line-clamp-4 mb-6 font-body flex-grow">La Granja San José de la IES CINOC se convirtió en un escenario de aprendizaje y conexión emocional con la naturaleza respondiendo al desarrollo de los estudiantes.</p>
+<a href="https://iescinoc.edu.co/ejercicios-asistidos-con-animales/" class="bg-[#fe6500] text-white text-center font-bold py-2.5 rounded-lg hover:bg-opacity-90 transition-colors mt-auto text-sm pointer-events-auto">Leer más</a>
+</div>
+</article>
+
+<!-- News 2 -->
+<article class="bg-surface-container-lowest overflow-hidden border border-surface-container-high rounded-xl flex flex-col hover:shadow-xl shadow-sm transition-shadow">
+<div class="aspect-[4/3] relative">
+<img src="https://iescinoc.edu.co/wp-content/uploads/lubit-ies-cinoc-reconociemiento-gobernacion-steam-1024x683.webp" class="w-full h-full object-cover">
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="font-bold text-primary-container mb-3 text-[15px] leading-snug">IES CINOC EN MEDIOS: Se llama Lubit y ha favorecido a 2.300 personas</h3>
+<p class="text-on-surface-variant text-sm line-clamp-4 mb-6 font-body flex-grow">Los municipios y el número de personas favorecidas están expuestas en un boletín de prensa que detalla el gran impacto en la región y la innovación liderada.</p>
+<a href="https://iescinoc.edu.co/impacto-lubit-2024/" class="bg-[#fe6500] text-white text-center font-bold py-2.5 rounded-lg hover:bg-opacity-90 transition-colors mt-auto text-sm pointer-events-auto">Leer más</a>
+</div>
+</article>
+
+<!-- News 3 -->
+<article class="bg-surface-container-lowest overflow-hidden border border-surface-container-high rounded-xl flex flex-col hover:shadow-xl shadow-sm transition-shadow">
+<div class="aspect-[4/3] relative">
+<img src="https://iescinoc.edu.co/wp-content/uploads/terapia-asistida-animales-laboratorio-neurociencia-ies-cinoc-lubit-1024x683.webp" class="w-full h-full object-cover">
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="font-bold text-primary-container mb-3 text-[15px] leading-snug">Capacitación: El poder de la conexión animal en la educación</h3>
+<p class="text-on-surface-variant text-sm line-clamp-4 mb-6 font-body flex-grow">Se busca analizar la mediación de los animales en los procesos de enseñanza aprendizaje para el fortalecimiento de habilidades socioemocionales.</p>
+<a href="https://iescinoc.edu.co/capacitacion-conexion-animal/" class="bg-[#fe6500] text-white text-center font-bold py-2.5 rounded-lg hover:bg-opacity-90 transition-colors mt-auto text-sm pointer-events-auto">Leer más</a>
+</div>
+</article>
+
+<!-- News 4 -->
+<article class="bg-surface-container-lowest overflow-hidden border border-surface-container-high rounded-xl flex flex-col hover:shadow-xl shadow-sm transition-shadow">
+<div class="aspect-[4/3] relative">
+<img src="https://iescinoc.edu.co/wp-content/uploads/lubit-vacaciones-recreacientifiacas-4-1024x768.webp" class="w-full h-full object-cover">
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="font-bold text-primary-container mb-3 text-[15px] leading-snug">Niños aprenden jugando en Vacaciones Recreacientíficas en el Lubit</h3>
+<p class="text-on-surface-variant text-sm line-clamp-4 mb-6 font-body flex-grow">La IES CINOC dio inicio al curso vacacional dirigido a estudiantes para aprender jugando con la tecnología de última generación en robótica y ciencias.</p>
+<a href="https://iescinoc.edu.co/ninos-aprenden-jugando-en-vacaciones-recreacientificas-en-el-lubit/" class="bg-[#fe6500] text-white text-center font-bold py-2.5 rounded-lg hover:bg-opacity-90 transition-colors mt-auto text-sm pointer-events-auto">Leer más</a>
+</div>
+</article>
+</div>
+</div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-16 bg-surface-container">
+<div class="max-w-7xl mx-auto px-12">
+<div class="bg-white rounded-2xl p-10 flex flex-col md:flex-row items-center justify-between shadow-sm border border-surface-container-highest">
+<div>
+<h2 class="text-3xl font-extrabold text-primary-container font-['Manrope'] mb-2">PREGUNTA POR NUESTROS SERVICIOS</h2>
+<p class="text-on-surface-variant">Estamos aquí para resolver tus dudas y ayudarte a elegir tu mejor camino en LUBIT.</p>
+</div>
+<div class="mt-8 md:mt-0 flex flex-col sm:flex-row gap-6">
+<a href="mailto:lubit@iescinoc.edu.co" class="flex items-center gap-3 text-secondary-container font-bold hover:text-[#a33e00] transition-colors bg-secondary-container/10 px-6 py-3 rounded-lg"><span class="material-symbols-outlined">mail</span> lubit@iescinoc.edu.co</a>
+<a href="tel:+573216425011" class="flex items-center gap-3 text-secondary-container font-bold hover:text-[#a33e00] transition-colors bg-secondary-container/10 px-6 py-3 rounded-lg"><span class="material-symbols-outlined">phone</span> 3216425011</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-[#1b365d] text-white py-16 px-12 w-full text-sm font-body">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 max-w-7xl mx-auto mb-12">
+<!-- Col 1 -->
+<div>
+<h3 class="text-lg font-black mb-6 uppercase tracking-wider font-['Manrope'] text-white">IES CINOC</h3>
+<div class="space-y-4 text-slate-300">
+<p class="font-bold text-white">Institución de Educación Superior Colegio Integrado Nacional Oriente de Caldas</p>
+<p>Nit: 890.802.678-4</p>
+<p><strong>Notificaciones Judiciales:</strong><br>notificacionesjudiciales@iescinoc.edu.co</p>
+<a href="https://iescinoc.edu.co/pqrs" class="text-[#ffb596] hover:text-white transition-colors block font-semibold mt-4">Realiza aquí tu PQRSDF</a>
+<a href="https://iescinoc.edu.co/sitemap_index.xml" class="text-[#ffb596] hover:text-white transition-colors block font-semibold">Mapa del sitio</a>
+<a href="http://cinocvirtual.edu.co/glpi" class="text-[#ffb596] hover:text-white transition-colors block font-semibold">Mesa de servicios</a>
+</div>
+</div>
+<!-- Col 2 -->
+<div>
+<h3 class="text-lg font-black mb-6 uppercase tracking-wider font-['Manrope'] text-white">SEDES Y HORARIO</h3>
+<div class="space-y-4 text-slate-300 text-xs">
+<p><strong class="text-white text-sm">Pensilvania, Caldas:</strong> Carrera 5 # 6-30<br><span class="opacity-75 block mt-1 border-b border-white/20 pb-2">(Sede principal y dirección de correspondencia)</span></p>
+<p>Lunes a Jueves de 8:00 a.m. a 12:00 m. y de 2:00 p.m a 6:30 p.m.<br>Viernes de 8:00 a.m. a 2:00 p.m.</p>
+<p>Cel. +57 3136516109</p>
+<p class="border-t border-white/20 pt-4"><strong class="text-white text-sm">Manzanares, Caldas:</strong> Cra 6 # 7-62 escuela Salvador Ramírez<br>Cel. +57 3218151488</p>
+<p class="border-t border-white/20 pt-4"><strong class="text-white text-sm">Marquetalia, Caldas:</strong> Calle 3 # 1a-26 escuela Cervantes<br>Miércoles a Viernes de 2:00 p.m a 6:00 p.m.<br>Sábados de 8:00 a 12:00 m. y de 1:00 p.m a 4:00 p.m.<br>Cel. +57 3218151499</p>
+</div>
+</div>
+<!-- Col 3 -->
+<div>
+<h3 class="text-lg font-black mb-6 uppercase tracking-wider font-['Manrope'] text-white">ACCESOS RÁPIDOS</h3>
+<ul class="space-y-3 text-slate-300">
+<li><a href="https://iescinoc.edu.co/transparencia" class="hover:text-white hover:translate-x-1 inline-block transition-transform">Sección Transparencia y Acceso a la Información</a></li>
+<li><a href="https://iescinoc.edu.co/politica-de-proteccion-de-datos" class="hover:text-white hover:translate-x-1 inline-block transition-transform">Política de tratamiento de datos personales</a></li>
+<li><a href="https://iescinoc.edu.co/politicatic/" class="hover:text-white hover:translate-x-1 inline-block transition-transform">Política de seguridad digital y privacidad de la información</a></li>
+<li><a href="https://iescinoc.edu.co/participa" class="hover:text-white hover:translate-x-1 inline-block transition-transform">Participa</a></li>
+<li><a href="https://iescinoc.edu.co/atencionalciudadano/" class="hover:text-white hover:translate-x-1 inline-block transition-transform">Atención ciudadana</a></li>
+<li><a href="https://iescinoc.edu.co/transparencia/plan-anticorrupcion-y-atencion-a-la-ciudadania/" class="hover:text-white hover:translate-x-1 inline-block transition-transform">Atención anticorrupción</a></li>
+<li><a href="https://iescinoc.edu.co/politicas-y-cumplimiento-legal/" class="hover:text-white hover:translate-x-1 inline-block transition-transform">Términos y condiciones</a></li>
+<li><a href="https://iescinoc.edu.co/tramites-y-servicios" class="hover:text-white hover:translate-x-1 inline-block transition-transform">Trámites y servicios</a></li>
+<li><a href="https://iescinoc.edu.co/admisiones" class="hover:text-white hover:translate-x-1 inline-block transition-transform">Admisiones</a></li>
+</ul>
+</div>
+<!-- Col 4 -->
+<div>
+<h3 class="text-lg font-black mb-6 uppercase tracking-wider font-['Manrope'] text-white">ENTIDADES RELACIONADAS</h3>
+<ul class="space-y-3 text-slate-300">
+<li><a href="http://www.mineducacion.gov.co/" class="hover:text-white transition-colors">Ministerio de Educación Nacional</a></li>
+<li><a href="https://site.caldas.gov.co/" class="hover:text-white transition-colors">Gobernación de Caldas</a></li>
+<li><a href="http://www.mintic.gov.co/" class="hover:text-white transition-colors">Ministerio de Tecnologías de la Información y las Comunicaciones - TICS</a></li>
+<li><a href="http://www.minhacienda.gov.co/" class="hover:text-white transition-colors">Ministerio de Hacienda y Crédito Público</a></li>
+<li><a href="https://www.redttu.edu.co/es/" class="hover:text-white transition-colors">REDTTU</a></li>
+<li><a href="https://minciencias.gov.co/" class="hover:text-white transition-colors">Ministerio de Ciencia Tecnología e Innovación</a></li>
+<li><a href="https://www.cnsc.gov.co/" class="hover:text-white transition-colors">Comisión Nacional del Servicio Civil - CNSC</a></li>
+<li><a href="http://www.icetex.gov.co/" class="hover:text-white transition-colors">ICETEX</a></li>
+<li><a href="http://www.icfes.gov.co/" class="hover:text-white transition-colors">ICFES</a></li>
+</ul>
+<div class="mt-8 flex flex-wrap gap-4 items-center">
+    <img src="https://iescinoc.edu.co/wp-content/uploads/Marca_pais_Colombia_logo.svg-3-99x97.png" class="h-10 w-auto object-contain">
+    <img src="https://iescinoc.edu.co/wp-content/uploads/logo-redttu-e1593179459873-149x68.png" class="h-10 w-auto bg-white rounded px-2 object-contain">
+    <img src="https://iescinoc.edu.co/wp-content/uploads/800px-Mineducación_Colombia.svg-1-300x59.png" class="h-10 w-auto bg-white rounded px-2 object-contain">
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto pt-8 border-t border-white/20 flex flex-col md:flex-row items-center justify-between gap-6 pb-4">
+<p class="text-slate-400 text-sm text-center md:text-left">© 2024 Desarrollado por Prensa, IES CINOC.<br>Institución de Educación Superior sujeta a inspección y vigilancia por el Ministerio de Educación Nacional.</p>
+<div class="flex flex-wrap justify-center gap-3">
+<a href="https://www.facebook.com/ies.cinoc/" class="w-10 h-10 rounded-full border border-slate-600 flex items-center justify-center hover:bg-secondary-container hover:border-secondary-container transition-all font-bold text-slate-300 hover:text-white" title="Facebook">Fb</a>
+<a href="https://twitter.com/IES_CINOC" class="w-10 h-10 rounded-full border border-slate-600 flex items-center justify-center hover:bg-secondary-container hover:border-secondary-container transition-all font-bold text-slate-300 hover:text-white" title="Twitter/X">X</a>
+<a href="https://www.instagram.com/ies_cinoc/" class="w-10 h-10 rounded-full border border-slate-600 flex items-center justify-center hover:bg-secondary-container hover:border-secondary-container transition-all font-bold text-slate-300 hover:text-white" title="Instagram">Ig</a>
+<a href="https://www.linkedin.com/company/ies-cinoc" class="w-10 h-10 rounded-full border border-slate-600 flex items-center justify-center hover:bg-secondary-container hover:border-secondary-container transition-all font-bold text-slate-300 hover:text-white" title="LinkedIn">In</a>
+<a href="https://www.youtube.com/c/IESCINOC" class="w-10 h-10 rounded-full border border-slate-600 flex items-center justify-center hover:bg-secondary-container hover:border-secondary-container transition-all font-bold text-slate-300 hover:text-white" title="YouTube">Yt</a>
+</div>
+</div>
+</footer>
+</body></html>
