@@ -144,7 +144,7 @@
 <!-- Hero Section: Virtual Tour -->
 <section class="relative w-full h-[921px] flex items-center pt-32 overflow-hidden">
 <div class="absolute inset-0 z-0">
-<img alt="Recorrido 360" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAC3FetcKUSoSjzPjVh8lAvjcqCHa0iMncVEokvSsjcB31ICwGYqiOB6hzPfyflAkG7-lsmuRGqkpq-oZdp8ABdz8XcllbFFgbBj6LO4LWGiZ-oRhL_-cL2LGAI1JrhLw-3HTLSXGYfPPyJuRs6DtqdFTHVrr7DWaELDLPa4D4fbq3SudWnS3iS-Q4AJEiwNs5gpH20vREh93bHCH93-8i7Lli5i3mzCd0WOGi4X_gNAGAV5AlTkhpthfIWCMyASuF5pCzJUtIW8ujb">
+<img alt="Recorrido 360" class="w-full h-full object-cover" src="https://realvision360.com/wp-content/uploads/2021/04/recorridos-virtuales-360-museos.jpg">
 <!-- Overlay más claro, sin fondo oscuro dominante -->
 <div class="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-transparent"></div>
 </div>
@@ -612,6 +612,141 @@ Ingresar al Museo <span class="material-symbols-outlined text-[18px]">open_in_ne
 </div>
 </section>
 
+<!-- Asesoría CTA + Formulario -->
+<section class="py-24 bg-[#001c3a] relative overflow-hidden">
+  <!-- Decorative elements -->
+  <div class="absolute -right-32 top-0 w-96 h-96 bg-[#fe6500]/10 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute -left-32 bottom-0 w-96 h-96 bg-[#295296]/20 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+    <!-- Header -->
+    <div class="text-center mb-14">
+      <span class="inline-block px-5 py-2 bg-[#fe6500]/15 text-[#fe6500] font-bold text-xs tracking-[0.3em] uppercase rounded-full border border-[#fe6500]/30 mb-5">LUBIT · IES CINOC</span>
+      <h2 class="text-4xl md:text-5xl font-extrabold text-white font-['Manrope'] leading-tight mb-4">
+        ASESÓRATE Y APROVECHA<br>
+        <span class="text-[#fe6500]">ESTA OPORTUNIDAD</span>
+      </h2>
+      <p class="text-slate-300 text-lg max-w-2xl mx-auto font-body leading-relaxed">
+        Déjanos tus datos y uno de nuestros equipo se comunicará contigo para guiarte.
+      </p>
+    </div>
+
+    <!-- Form Card -->
+    <div class="max-w-3xl mx-auto bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-10 shadow-2xl">
+      <form id="asesoria-form" onsubmit="handleAsesoriaForm(event)">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <!-- Nombre -->
+          <div class="flex flex-col gap-2">
+            <label for="asesoria-nombre" class="text-slate-300 text-sm font-semibold tracking-wide">Nombre completo <span class="text-[#fe6500]">*</span></label>
+            <input id="asesoria-nombre" type="text" required placeholder="Ej: Juan Pérez"
+              class="bg-white/10 border border-white/20 text-white placeholder-slate-400 rounded-xl px-5 py-3.5 text-sm focus:outline-none focus:border-[#fe6500] focus:ring-2 focus:ring-[#fe6500]/30 transition-all">
+          </div>
+          <!-- Teléfono -->
+          <div class="flex flex-col gap-2">
+            <label for="asesoria-telefono" class="text-slate-300 text-sm font-semibold tracking-wide">Número de teléfono <span class="text-[#fe6500]">*</span></label>
+            <input id="asesoria-telefono" type="tel" required placeholder="Ej: 310 000 0000"
+              class="bg-white/10 border border-white/20 text-white placeholder-slate-400 rounded-xl px-5 py-3.5 text-sm focus:outline-none focus:border-[#fe6500] focus:ring-2 focus:ring-[#fe6500]/30 transition-all">
+          </div>
+          <!-- Email -->
+          <div class="flex flex-col gap-2">
+            <label for="asesoria-email" class="text-slate-300 text-sm font-semibold tracking-wide">Correo electrónico <span class="text-[#fe6500]">*</span></label>
+            <input id="asesoria-email" type="email" required placeholder="tucorreo@ejemplo.com"
+              class="bg-white/10 border border-white/20 text-white placeholder-slate-400 rounded-xl px-5 py-3.5 text-sm focus:outline-none focus:border-[#fe6500] focus:ring-2 focus:ring-[#fe6500]/30 transition-all">
+          </div>
+          <!-- Área de interés -->
+          <div class="flex flex-col gap-2">
+            <label for="asesoria-area" class="text-slate-300 text-sm font-semibold tracking-wide">Área de interés <span class="text-[#fe6500]">*</span></label>
+            <select id="asesoria-area" required
+              class="bg-[#0d2a4d] border border-white/20 text-white rounded-xl px-5 py-3.5 text-sm focus:outline-none focus:border-[#fe6500] focus:ring-2 focus:ring-[#fe6500]/30 transition-all appearance-none cursor-pointer">
+              <option value="" disabled selected class="text-slate-400">Selecciona un área</option>
+              <option value="bilingüismo">Bilingüismo / Inglés</option>
+              <option value="tecnologia">Tecnología y Desarrollo</option>
+              <option value="ia">Inteligencia Artificial</option>
+              <option value="robotica">Robótica y Electrónica</option>
+              <option value="neurociencia">Neurociencia</option>
+              <option value="museo">Museo Interactivo de Conflictividad</option>
+              <option value="recorrido">Recorrido 360°</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+          <!-- Empresa / Escuela / Entidad -->
+          <div class="flex flex-col gap-2">
+            <label for="asesoria-entidad" class="text-slate-300 text-sm font-semibold tracking-wide">Empresa, escuela o entidad</label>
+            <input id="asesoria-entidad" type="text" placeholder="Ej: Colegio San José, Empresa XYZ..."
+              class="bg-white/10 border border-white/20 text-white placeholder-slate-400 rounded-xl px-5 py-3.5 text-sm focus:outline-none focus:border-[#fe6500] focus:ring-2 focus:ring-[#fe6500]/30 transition-all">
+          </div>
+          <!-- Rol o Cargo -->
+          <div class="flex flex-col gap-2">
+            <label for="asesoria-rol" class="text-slate-300 text-sm font-semibold tracking-wide">Rol o cargo</label>
+            <input id="asesoria-rol" type="text" placeholder="Ej: Docente, Estudiante, Gerente..."
+              class="bg-white/10 border border-white/20 text-white placeholder-slate-400 rounded-xl px-5 py-3.5 text-sm focus:outline-none focus:border-[#fe6500] focus:ring-2 focus:ring-[#fe6500]/30 transition-all">
+          </div>
+        </div>
+
+        <!-- Mensaje -->
+        <div class="flex flex-col gap-2 mb-8">
+          <label for="asesoria-mensaje" class="text-slate-300 text-sm font-semibold tracking-wide">Cuéntanos más sobre lo que buscas</label>
+          <textarea id="asesoria-mensaje" rows="4" placeholder="Escribe aquí tus dudas, objetivos o cualquier información adicional..."
+            class="bg-white/10 border border-white/20 text-white placeholder-slate-400 rounded-xl px-5 py-3.5 text-sm focus:outline-none focus:border-[#fe6500] focus:ring-2 focus:ring-[#fe6500]/30 transition-all resize-none"></textarea>
+        </div>
+
+        <!-- Submit -->
+        <div class="flex flex-col sm:flex-row items-center gap-5">
+          <button type="submit" id="asesoria-submit"
+            class="w-full sm:w-auto flex-1 bg-[#fe6500] hover:bg-[#c95200] text-white font-bold text-base py-4 px-10 rounded-xl transition-all shadow-lg shadow-[#fe6500]/25 hover:-translate-y-0.5 hover:shadow-[#fe6500]/40 flex items-center justify-center gap-3">
+            <span class="material-symbols-outlined text-[20px]">send</span>
+            Solicitar Asesoría Gratuita
+          </button>
+          <div class="flex items-center gap-3 text-slate-400 text-xs">
+            <span class="material-symbols-outlined text-[16px] text-[#fe6500]">lock</span>
+            Tus datos están seguros y no serán compartidos.
+          </div>
+        </div>
+
+        <!-- Success message (hidden) -->
+        <div id="asesoria-success" class="hidden mt-6 p-5 bg-green-500/10 border border-green-400/30 rounded-xl flex items-center gap-4">
+          <span class="material-symbols-outlined text-green-400 text-3xl" style="font-variation-settings:'FILL' 1;">check_circle</span>
+          <div>
+            <p class="text-green-300 font-bold text-base">¡Solicitud enviada con éxito!</p>
+            <p class="text-slate-300 text-sm mt-1">Pronto uno de nuestros asesores se pondrá en contacto contigo.</p>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- Contact quick info -->
+    <div class="mt-12 flex flex-wrap justify-center gap-8 text-center">
+      <a href="mailto:lubit@iescinoc.edu.co" class="flex items-center gap-3 text-slate-300 hover:text-[#fe6500] transition-colors font-medium">
+        <span class="material-symbols-outlined text-[#fe6500] text-[22px]">mail</span>
+        lubit@iescinoc.edu.co
+      </a>
+      <a href="tel:+573216425011" class="flex items-center gap-3 text-slate-300 hover:text-[#fe6500] transition-colors font-medium">
+        <span class="material-symbols-outlined text-[#fe6500] text-[22px]">phone</span>
+        321 642 5011
+      </a>
+      <a href="https://wa.me/573216425011" target="_blank" class="flex items-center gap-3 text-slate-300 hover:text-[#fe6500] transition-colors font-medium">
+        <span class="material-symbols-outlined text-[#fe6500] text-[22px]">chat</span>
+        WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+  function handleAsesoriaForm(e) {
+    e.preventDefault();
+    const btn = document.getElementById('asesoria-submit');
+    const success = document.getElementById('asesoria-success');
+    btn.disabled = true;
+    btn.innerHTML = '<span class="material-symbols-outlined animate-spin text-[20px]">progress_activity</span> Enviando...';
+    setTimeout(() => {
+      btn.style.display = 'none';
+      success.classList.remove('hidden');
+      success.classList.add('flex');
+      document.getElementById('asesoria-form').reset();
+    }, 1400);
+  }
+</script>
 
 
 <!-- Footer -->
