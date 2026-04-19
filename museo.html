@@ -237,15 +237,177 @@ h1, h2, h3, h4 { font-family: 'Manrope', sans-serif; }
 
 </main>
 
-<!-- Minimal Footer -->
-<footer class="bg-black/40 border-t border-white/10 text-slate-400 py-8 px-12 w-full text-sm font-body mt-auto">
-<div class="max-w-[1400px] mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-<p>© 2024 Desarrollado por Prensa, IES CINOC. Proyecto Museo Interactivo LUBIT.</p>
-<div class="flex items-center gap-6 font-bold">
-    <a href="mailto:lubit@iescinoc.edu.co" class="hover:text-[#fe6500] transition-colors">lubit@iescinoc.edu.co</a>
+<!-- Asesoría CTA + Formulario -->
+<section class="py-24 bg-[#001c3a] relative overflow-hidden">
+  <div class="absolute -right-32 top-0 w-96 h-96 bg-[#fe6500]/10 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute -left-32 bottom-0 w-96 h-96 bg-[#295296]/20 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+    <div class="text-center mb-14">
+      <span class="inline-block px-5 py-2 bg-[#fe6500]/15 text-[#fe6500] font-bold text-xs tracking-[0.3em] uppercase rounded-full border border-[#fe6500]/30 mb-5">LUBIT · IES CINOC</span>
+      <h2 class="text-4xl md:text-5xl font-extrabold text-white font-['Manrope'] leading-tight mb-4">
+        ASESÓRATE Y APROVECHA<br>
+        <span class="text-[#fe6500]">ESTA OPORTUNIDAD</span>
+      </h2>
+      <p class="text-slate-300 text-lg max-w-2xl mx-auto font-body leading-relaxed">Déjanos tus datos y uno de nuestros equipo se comunicará contigo para guiarte.</p>
+    </div>
+    <div class="max-w-3xl mx-auto bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-10 shadow-2xl">
+      <form id="asesoria-form-museo" onsubmit="handleAsesoriaFormMuseo(event)">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
+          <div class="flex flex-col gap-2">
+            <label for="m-nombre" class="text-slate-300 text-sm font-semibold tracking-wide">Nombre completo <span class="text-[#fe6500]">*</span></label>
+            <input type="text" id="m-nombre" placeholder="Ej: Juan Pérez" required class="bg-white/10 border border-white/20 text-white placeholder-slate-400 rounded-xl px-5 py-3.5 text-sm focus:outline-none focus:border-[#fe6500] focus:ring-2 focus:ring-[#fe6500]/30 transition-all">
+          </div>
+          <div class="flex flex-col gap-2">
+            <label for="m-telefono" class="text-slate-300 text-sm font-semibold tracking-wide">Número de teléfono <span class="text-[#fe6500]">*</span></label>
+            <input type="tel" id="m-telefono" placeholder="Ej: 310 000 0000" required class="bg-white/10 border border-white/20 text-white placeholder-slate-400 rounded-xl px-5 py-3.5 text-sm focus:outline-none focus:border-[#fe6500] focus:ring-2 focus:ring-[#fe6500]/30 transition-all">
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
+          <div class="flex flex-col gap-2">
+            <label for="m-email" class="text-slate-300 text-sm font-semibold tracking-wide">Correo electrónico <span class="text-[#fe6500]">*</span></label>
+            <input type="email" id="m-email" placeholder="tucorreo@ejemplo.com" required class="bg-white/10 border border-white/20 text-white placeholder-slate-400 rounded-xl px-5 py-3.5 text-sm focus:outline-none focus:border-[#fe6500] focus:ring-2 focus:ring-[#fe6500]/30 transition-all">
+          </div>
+          <div class="flex flex-col gap-2">
+            <label for="m-area" class="text-slate-300 text-sm font-semibold tracking-wide">Área de interés <span class="text-[#fe6500]">*</span></label>
+            <select id="m-area" required class="bg-white/10 border border-white/20 text-white rounded-xl px-5 py-3.5 text-sm focus:outline-none focus:border-[#fe6500] focus:ring-2 focus:ring-[#fe6500]/30 transition-all appearance-none">
+              <option value="" class="bg-[#001c3a]">Selecciona un área</option>
+              <option value="museo" class="bg-[#001c3a]">Museo Interactivo</option>
+              <option value="recorridos" class="bg-[#001c3a]">Recorridos 360°</option>
+              <option value="cursos" class="bg-[#001c3a]">Cursos y Diplomados</option>
+              <option value="vr-ra" class="bg-[#001c3a]">VR / Realidad Aumentada</option>
+              <option value="robotica" class="bg-[#001c3a]">Robótica</option>
+              <option value="otro" class="bg-[#001c3a]">Otro</option>
+            </select>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
+          <div class="flex flex-col gap-2">
+            <label for="m-entidad" class="text-slate-300 text-sm font-semibold tracking-wide">Empresa, escuela o entidad</label>
+            <input type="text" id="m-entidad" placeholder="Ej: Colegio San José, Empresa XYZ..." class="bg-white/10 border border-white/20 text-white placeholder-slate-400 rounded-xl px-5 py-3.5 text-sm focus:outline-none focus:border-[#fe6500] focus:ring-2 focus:ring-[#fe6500]/30 transition-all">
+          </div>
+          <div class="flex flex-col gap-2">
+            <label for="m-rol" class="text-slate-300 text-sm font-semibold tracking-wide">Rol o cargo</label>
+            <input type="text" id="m-rol" placeholder="Ej: Docente, Estudiante, Gerente..." class="bg-white/10 border border-white/20 text-white placeholder-slate-400 rounded-xl px-5 py-3.5 text-sm focus:outline-none focus:border-[#fe6500] focus:ring-2 focus:ring-[#fe6500]/30 transition-all">
+          </div>
+        </div>
+        <div class="flex flex-col gap-2 mb-8">
+          <label for="m-mensaje" class="text-slate-300 text-sm font-semibold tracking-wide">Cuéntanos más sobre lo que buscas</label>
+          <textarea id="m-mensaje" rows="4" placeholder="Escribe aquí tus dudas, objetivos o cualquier información adicional..." class="bg-white/10 border border-white/20 text-white placeholder-slate-400 rounded-xl px-5 py-3.5 text-sm focus:outline-none focus:border-[#fe6500] focus:ring-2 focus:ring-[#fe6500]/30 transition-all resize-none"></textarea>
+        </div>
+        <div class="flex flex-col sm:flex-row items-center gap-5">
+          <button type="submit" id="asesoria-submit-museo" class="w-full sm:w-auto flex-1 bg-[#fe6500] hover:bg-[#c95200] text-white font-bold text-base py-4 px-10 rounded-xl transition-all shadow-lg shadow-[#fe6500]/25 hover:-translate-y-0.5 flex items-center justify-center gap-3">
+            <span class="material-symbols-outlined text-[20px]">send</span>
+            Solicitar Asesoría Gratuita
+          </button>
+          <div class="flex items-center gap-3 text-slate-400 text-xs">
+            <span class="material-symbols-outlined text-[16px] text-[#fe6500]">lock</span>
+            Tus datos están seguros y no serán compartidos.
+          </div>
+        </div>
+        <div id="asesoria-success-museo" class="hidden mt-6 p-5 bg-green-500/10 border border-green-400/30 rounded-xl flex items-center gap-4">
+          <span class="material-symbols-outlined text-green-400 text-3xl" style="font-variation-settings:'FILL' 1;">check_circle</span>
+          <div>
+            <p class="text-green-300 font-bold text-base">¡Solicitud enviada con éxito!</p>
+            <p class="text-slate-300 text-sm mt-1">Pronto uno de nuestros asesores se pondrá en contacto contigo.</p>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="mt-12 flex flex-wrap justify-center gap-8 text-center">
+      <a href="mailto:lubit@iescinoc.edu.co" class="flex items-center gap-3 text-slate-300 hover:text-[#fe6500] transition-colors font-medium">
+        <span class="material-symbols-outlined text-[#fe6500] text-[22px]">mail</span> lubit@iescinoc.edu.co
+      </a>
+      <a href="tel:+573216425011" class="flex items-center gap-3 text-slate-300 hover:text-[#fe6500] transition-colors font-medium">
+        <span class="material-symbols-outlined text-[#fe6500] text-[22px]">phone</span> 321 642 5011
+      </a>
+      <a href="https://wa.me/573216425011" target="_blank" class="flex items-center gap-3 text-slate-300 hover:text-[#fe6500] transition-colors font-medium">
+        <span class="material-symbols-outlined text-[#fe6500] text-[22px]">chat</span> WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+  function handleAsesoriaFormMuseo(e) {
+    e.preventDefault();
+    const btn = document.getElementById('asesoria-submit-museo');
+    const success = document.getElementById('asesoria-success-museo');
+    btn.disabled = true;
+    btn.innerHTML = '<span class="material-symbols-outlined text-[20px]">progress_activity</span> Enviando...';
+    setTimeout(() => { btn.style.display = 'none'; success.classList.remove('hidden'); success.classList.add('flex'); document.getElementById('asesoria-form-museo').reset(); }, 1400);
+  }
+</script>
+
+<!-- Footer -->
+<footer class="bg-[#1b365d] text-white py-16 px-12 w-full text-sm font-body">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 max-w-7xl mx-auto mb-12">
+<div>
+  <h3 class="text-lg font-black mb-6 uppercase tracking-wider font-['Manrope'] text-white">IES CINOC</h3>
+  <div class="space-y-4 text-slate-300">
+    <p class="font-bold text-white">Institución de Educación Superior Colegio Integrado Nacional Oriente de Caldas</p>
+    <p>Nit: 890.802.678-4</p>
+    <p><strong>Notificaciones Judiciales:</strong><br>notificacionesjudiciales@iescinoc.edu.co</p>
+    <a href="https://iescinoc.edu.co/pqrs" class="text-[#ffb596] hover:text-white transition-colors block font-semibold mt-4">Realiza aquí tu PQRSDF</a>
+    <a href="https://iescinoc.edu.co/sitemap_index.xml" class="text-[#ffb596] hover:text-white transition-colors block font-semibold">Mapa del sitio</a>
+    <a href="http://cinocvirtual.edu.co/glpi" class="text-[#ffb596] hover:text-white transition-colors block font-semibold">Mesa de servicios</a>
+  </div>
+</div>
+<div>
+  <h3 class="text-lg font-black mb-6 uppercase tracking-wider font-['Manrope'] text-white">SEDES Y HORARIO</h3>
+  <div class="space-y-4 text-slate-300 text-xs">
+    <p><strong class="text-white text-sm">Pensilvania, Caldas:</strong> Carrera 5 # 6-30<br><span class="opacity-75 block mt-1 border-b border-white/20 pb-2">(Sede principal y dirección de correspondencia)</span></p>
+    <p>Lunes a Jueves de 8:00 a.m. a 12:00 m. y de 2:00 p.m a 6:30 p.m.<br>Viernes de 8:00 a.m. a 2:00 p.m.</p>
+    <p>Cel. +57 3136516109</p>
+    <p class="border-t border-white/20 pt-4"><strong class="text-white text-sm">Manzanares, Caldas:</strong> Cra 6 # 7-62 escuela Salvador Ramírez<br>Cel. +57 3218151488</p>
+    <p class="border-t border-white/20 pt-4"><strong class="text-white text-sm">Marquetalia, Caldas:</strong> Calle 3 # 1a-26 escuela Cervantes<br>Miércoles a Viernes de 2:00 p.m a 6:00 p.m.<br>Sábados de 8:00 a 12:00 m. y de 1:00 p.m a 4:00 p.m.<br>Cel. +57 3218151499</p>
+  </div>
+</div>
+<div>
+  <h3 class="text-lg font-black mb-6 uppercase tracking-wider font-['Manrope'] text-white">ACCESOS RÁPIDOS</h3>
+  <ul class="space-y-3 text-slate-300">
+    <li><a href="https://iescinoc.edu.co/transparencia" class="hover:text-white hover:translate-x-1 inline-block transition-transform">Sección Transparencia y Acceso a la Información</a></li>
+    <li><a href="https://iescinoc.edu.co/politica-de-proteccion-de-datos" class="hover:text-white hover:translate-x-1 inline-block transition-transform">Política de tratamiento de datos personales</a></li>
+    <li><a href="https://iescinoc.edu.co/politicatic/" class="hover:text-white hover:translate-x-1 inline-block transition-transform">Política de seguridad digital y privacidad de la información</a></li>
+    <li><a href="https://iescinoc.edu.co/participa" class="hover:text-white hover:translate-x-1 inline-block transition-transform">Participa</a></li>
+    <li><a href="https://iescinoc.edu.co/atencionalciudadano/" class="hover:text-white hover:translate-x-1 inline-block transition-transform">Atención ciudadana</a></li>
+    <li><a href="https://iescinoc.edu.co/transparencia/plan-anticorrupcion-y-atencion-a-la-ciudadania/" class="hover:text-white hover:translate-x-1 inline-block transition-transform">Atención anticorrupción</a></li>
+    <li><a href="https://iescinoc.edu.co/politicas-y-cumplimiento-legal/" class="hover:text-white hover:translate-x-1 inline-block transition-transform">Términos y condiciones</a></li>
+    <li><a href="https://iescinoc.edu.co/tramites-y-servicios" class="hover:text-white hover:translate-x-1 inline-block transition-transform">Trámites y servicios</a></li>
+    <li><a href="https://iescinoc.edu.co/admisiones" class="hover:text-white hover:translate-x-1 inline-block transition-transform">Admisiones</a></li>
+  </ul>
+</div>
+<div>
+  <h3 class="text-lg font-black mb-6 uppercase tracking-wider font-['Manrope'] text-white">ENTIDADES RELACIONADAS</h3>
+  <ul class="space-y-3 text-slate-300">
+    <li><a href="http://www.mineducacion.gov.co/" class="hover:text-white transition-colors">Ministerio de Educación Nacional</a></li>
+    <li><a href="https://site.caldas.gov.co/" class="hover:text-white transition-colors">Gobernación de Caldas</a></li>
+    <li><a href="http://www.mintic.gov.co/" class="hover:text-white transition-colors">Ministerio de Tecnologías de la Información y las Comunicaciones - TICS</a></li>
+    <li><a href="http://www.minhacienda.gov.co/" class="hover:text-white transition-colors">Ministerio de Hacienda y Crédito Público</a></li>
+    <li><a href="https://www.redttu.edu.co/es/" class="hover:text-white transition-colors">REDTTU</a></li>
+    <li><a href="https://minciencias.gov.co/" class="hover:text-white transition-colors">Ministerio de Ciencia Tecnología e Innovación</a></li>
+    <li><a href="https://www.cnsc.gov.co/" class="hover:text-white transition-colors">Comisión Nacional del Servicio Civil - CNSC</a></li>
+    <li><a href="http://www.icetex.gov.co/" class="hover:text-white transition-colors">ICETEX</a></li>
+    <li><a href="http://www.icfes.gov.co/" class="hover:text-white transition-colors">ICFES</a></li>
+  </ul>
+  <div class="mt-8 flex flex-wrap gap-4 items-center">
+    <img src="https://iescinoc.edu.co/wp-content/uploads/Marca_pais_Colombia_logo.svg-3-99x97.png" class="h-10 w-auto object-contain">
+    <img src="https://iescinoc.edu.co/wp-content/uploads/logo-redttu-e1593179459873-149x68.png" class="h-10 w-auto bg-white rounded px-2 object-contain">
+    <img src="https://iescinoc.edu.co/wp-content/uploads/800px-Mineducación_Colombia.svg-1-300x59.png" class="h-10 w-auto bg-white rounded px-2 object-contain">
+  </div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto pt-8 border-t border-white/20 flex flex-col md:flex-row items-center justify-between gap-6 pb-4">
+<p class="text-slate-400 text-sm text-center md:text-left">© 2024 Desarrollado por Prensa, IES CINOC.<br>Institución de Educación Superior sujeta a inspección y vigilancia por el Ministerio de Educación Nacional.</p>
+<div class="flex flex-wrap justify-center gap-3">
+  <a href="https://www.facebook.com/ies.cinoc/" class="w-10 h-10 rounded-full border border-slate-600 flex items-center justify-center hover:bg-[#fe6500] hover:border-[#fe6500] transition-all font-bold text-slate-300 hover:text-white" title="Facebook">Fb</a>
+  <a href="https://twitter.com/IES_CINOC" class="w-10 h-10 rounded-full border border-slate-600 flex items-center justify-center hover:bg-[#fe6500] hover:border-[#fe6500] transition-all font-bold text-slate-300 hover:text-white" title="Twitter/X">X</a>
+  <a href="https://www.instagram.com/ies_cinoc/" class="w-10 h-10 rounded-full border border-slate-600 flex items-center justify-center hover:bg-[#fe6500] hover:border-[#fe6500] transition-all font-bold text-slate-300 hover:text-white" title="Instagram">Ig</a>
+  <a href="https://www.linkedin.com/company/ies-cinoc" class="w-10 h-10 rounded-full border border-slate-600 flex items-center justify-center hover:bg-[#fe6500] hover:border-[#fe6500] transition-all font-bold text-slate-300 hover:text-white" title="LinkedIn">In</a>
+  <a href="https://www.youtube.com/c/IESCINOC" class="w-10 h-10 rounded-full border border-slate-600 flex items-center justify-center hover:bg-[#fe6500] hover:border-[#fe6500] transition-all font-bold text-slate-300 hover:text-white" title="YouTube">Yt</a>
 </div>
 </div>
 </footer>
+
 
 </body>
 </html>
