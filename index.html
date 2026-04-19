@@ -142,9 +142,9 @@
   </div>
 </nav>
 <!-- Hero Section: Virtual Tour -->
-<section class="relative w-full h-[921px] flex items-center pt-32 overflow-hidden">
+<section class="relative w-full h-[580px] flex items-center pt-32 overflow-hidden">
 <div class="absolute inset-0 z-0">
-<img alt="Recorrido 360" class="w-full h-full object-cover" src="https://realvision360.com/wp-content/uploads/2021/04/recorridos-virtuales-360-museos.jpg">
+<img alt="Recorrido 360" class="w-full h-full object-cover" style="object-position: center 35%;" src="https://realvision360.com/wp-content/uploads/2021/04/recorridos-virtuales-360-museos.jpg">
 <!-- Overlay más claro, sin fondo oscuro dominante -->
 <div class="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-transparent"></div>
 </div>
@@ -228,54 +228,15 @@
 </div>
 </section>
 
-<!-- Museo Interactivo Section -->
-<section class="py-24 bg-[#1b365d] text-white relative overflow-hidden">
-<!-- Decorative background effect -->
-<div class="absolute -right-64 top-0 w-96 h-96 bg-secondary-container/20 rounded-full blur-3xl pointer-events-none"></div>
-<div class="absolute -left-64 bottom-0 w-96 h-96 bg-primary-container/40 rounded-full blur-3xl pointer-events-none"></div>
-<div class="max-w-7xl mx-auto px-12 relative z-10">
-<div class="flex flex-col md:flex-row items-center gap-16">
-<div class="w-full md:w-1/2">
-<span class="inline-flex items-center gap-2 px-4 py-1.5 bg-secondary-container/20 text-secondary-container font-bold text-sm tracking-widest uppercase mb-6 rounded-full border border-secondary-container/30"><span class="material-symbols-outlined text-[16px]">account_balance</span> Proyecto Institucional</span>
-<h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6 font-['Manrope'] leading-tight">Museo Interactivo de Conflictividad</h2>
-<p class="text-slate-300 text-[17px] leading-relaxed font-body mb-6">Un espacio de reflexión, memoria y comprensión de la historia a través de piezas tecnológicas destinadas a educar, sanar y preservar la verdad sobre la conflictividad en nuestro territorio.</p>
-<div class="grid grid-cols-2 gap-3 mb-8">
-  <div class="flex items-center gap-2 text-sm text-slate-200"><span class="material-symbols-outlined text-[#fe6500] text-[18px]">view_in_ar</span> Realidad Aumentada</div>
-  <div class="flex items-center gap-2 text-sm text-slate-200"><span class="material-symbols-outlined text-[#fe6500] text-[18px]">360</span> Videos 360°</div>
-  <div class="flex items-center gap-2 text-sm text-slate-200"><span class="material-symbols-outlined text-[#fe6500] text-[18px]">sports_esports</span> Juegos Interactivos</div>
-  <div class="flex items-center gap-2 text-sm text-slate-200"><span class="material-symbols-outlined text-[#fe6500] text-[18px]">photo_library</span> Archivo Audiovisual</div>
-</div>
-<div class="flex gap-4">
-<a href="museo.html" class="bg-[#fe6500] hover:bg-[#a33e00] text-white font-bold py-3 px-8 rounded-lg transition-colors flex items-center gap-3 shadow-lg shadow-[#fe6500]/20">
-Ingresar al Museo <span class="material-symbols-outlined text-[18px]">open_in_new</span>
-</a>
-</div>
-</div>
-<div class="w-full md:w-1/2 grid grid-cols-2 gap-5 relative">
-<!-- Decorative element -->
-<div class="absolute -inset-4 bg-white/5 rounded-2xl border border-white/10 -rotate-3 z-0"></div>
-<div class="rounded-xl overflow-hidden shadow-2xl h-80 transform translate-y-6 relative z-10">
-<img src="https://iescinoc.edu.co/wp-content/uploads/lubit-ies-cinoc-reconociemiento-gobernacion-steam-1024x683.webp" alt="Archivo Histórico" class="w-full h-full object-cover grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700 hover:scale-105 cursor-pointer">
-</div>
-<div class="rounded-xl overflow-hidden shadow-2xl h-80 relative z-10">
-<img src="https://iescinoc.edu.co/wp-content/uploads/LUBIT-1.jpg" alt="Exposición Museo" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105 cursor-pointer">
-</div>
-</div>
-</div>
-</div>
-</section>
-
 <!-- Recorrido 360° Section -->
-<section class="relative py-0 overflow-hidden">
-  <!-- Full image background strip -->
-  <div class="relative h-[420px] md:h-[480px] w-full overflow-hidden">
+<section class="relative overflow-hidden bg-[#001c3a]">
+
+  <!-- PARTE SUPERIOR: Imagen 360 con contenido -->
+  <div class="relative h-[480px] w-full overflow-hidden">
     <img src="https://realvision360.com/wp-content/uploads/2021/04/recorridos-virtuales-360-museos.jpg" alt="Recorrido 360 LUBIT" class="w-full h-full object-cover scale-105">
-    <!-- Gradient overlay -->
     <div class="absolute inset-0 bg-gradient-to-r from-[#001c3a]/95 via-[#001c3a]/70 to-[#001c3a]/20"></div>
-    <!-- Content over image -->
     <div class="absolute inset-0 flex items-center">
       <div class="max-w-7xl mx-auto px-6 md:px-12 w-full flex flex-col md:flex-row items-center gap-12">
-        <!-- Left: Text -->
         <div class="w-full md:w-1/2">
           <span class="inline-flex items-center gap-2 px-4 py-1.5 bg-[#fe6500]/20 text-[#fe6500] font-bold text-xs tracking-[0.25em] uppercase mb-5 rounded-full border border-[#fe6500]/40">
             <span class="material-symbols-outlined text-[14px]">360</span> Tour Virtual
@@ -286,7 +247,6 @@ Ingresar al Museo <span class="material-symbols-outlined text-[18px]">open_in_ne
             Ver Recorridos <span class="material-symbols-outlined text-[18px] transition-transform group-hover:translate-x-1">arrow_forward</span>
           </a>
         </div>
-        <!-- Right: Stat cards -->
         <div class="w-full md:w-1/2 flex justify-end">
           <div class="grid grid-cols-2 gap-4 w-full max-w-sm">
             <div class="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-5 text-center">
@@ -314,6 +274,8 @@ Ingresar al Museo <span class="material-symbols-outlined text-[18px]">open_in_ne
       </div>
     </div>
   </div>
+
+
 </section>
 
 <!-- Courses Section -->
